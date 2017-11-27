@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <% if notice %>
+    <p id="notice" class="alert alert-info"><br><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p id="alert" class="alert alert-info"><br><%= alert %></p>
+<% end %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
