@@ -1,0 +1,41 @@
+<div class="band"></div>
+
+<div class="products-show-div">
+	<div class="row">
+		<div class="col-md-6">
+    <p><% if @travel.image_url.present? %>
+      <%= image_tag(@travel.image_url, class: "img-responsive") %><% end %></p></div>
+		<div class="col-md-6">
+			<h1 class="product-name"><%= @travel.name %> </h1>
+      <p><%= link_to 'Edit', edit_travel_path(@travel),  class: "command-button" %></p>
+
+      <h2 class="product-price"><%= @travel.price %> €</h2>
+
+      <br><br>
+      <p class="product-description"><%= @travel.description %></p>
+
+    </div>
+	</div>
+
+<hr>
+
+<br>
+<h5 class="text-center">DISCOVER MORE</h5>
+  <div class="container-fluid">
+    <div class="row">
+      <% @travels.each do |travel| %>
+      <div class="col-md-3">
+      <p><% if @travel.image_url.present? %>
+          <p><%= link_to image_tag(travel.image_url, class: "img-responsive img-product-show"), travel %>
+          </p>
+      <% end %></p>
+      <p class="text-center name-product-show"><%= travel.name %></p>
+      <br><br>
+    </div>
+      <% end %>
+    </div>
+  </div>
+
+	<p class="text-center"><%= link_to 'Back', travels_path, class: "command-button" %>
+
+</div>

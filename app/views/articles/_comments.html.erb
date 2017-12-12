@@ -1,0 +1,5 @@
+<% @comments.approved.each do |comment| %>
+  <%= simple_format(comment.body) %>
+<% end %>
+
+<%= link_to "Moderate #{pluralize @comments.draft.size, ('comment')}", article_comments_path(@article), class: "button alert small"%>

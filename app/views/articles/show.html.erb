@@ -1,12 +1,50 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div class="band"></div>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<% if @article.img_url.present? %>
+  <%= link_to image_tag(@article.img_url, class: "img-responsive article-img-show"), article_path(@article) %>
+<% end %>
+
+<div class="article-box">
+    <p class="text-center ac-show"><span class="article-category-show"><%= @article.category %></span> &nbsp · &nbsp <span class="article-author-show"><%= @article.author %></span></p>
+	
+	<h1 class="article-title-show"><%= @article.title %></h1>
+
+  <% if signed_in? && current_user.moderator? %>
+    <p class="text-center ed-show">
+    <%= link_to 'Edit', edit_article_path(@article), class: "command-button" %> &nbsp · &nbsp
+    <%= link_to 'Delete', @article, class: "command-button", method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %></p>
+
+	<p class="article-text"><%= @article.text %></p>
+</div>
+
+	<p class="text-center"><%= link_to 'See all Stories', articles_path, class: "command-button" %></p>
+
+<div class="mostread-box">
+  <h5 class="text-center">Last news</h5>
+      <div class="row">
+      <% @articles.each do |article| %>
+        <div class="col-md-3">
+        <!-- -->
+        <div class="img-div">
+          <p><% if article.img_url.present? %>
+          <%= link_to image_tag(article.img_url, class: "img-responsive article-img-mostread"), article_path(article) %>
+          <% end %></p>
+        </div>
+        <!-- -->
+        <p class="text-center ac-mostread"><span class="article-category-index"><%= article.category %></span> &nbsp · &nbsp <span class="article-author-index"><%= article.author %></span></p>
+        <!-- -->
+        <h3><%= link_to article.title, article_path(article), class: "article-title-mostread" %></h3>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="tag-box">
+  <h5 class="text-center ">Topics</h5>
+  <p class="text-center">#internet &nbsp &nbsp · &nbsp &nbsp #globe &nbsp &nbsp · &nbsp &nbsp #USA</p>
+
+</div>
+
+<%= render 'new_comment' %>
+<%= render 'comments' %>

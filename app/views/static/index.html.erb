@@ -1,2 +1,47 @@
-<h1>Hello, Rails!</h1>
-<%= link_to 'My Blog', controller: 'articles' %>
+<div class="row">
+  <div class="col-md-12">
+    <%= image_tag "settler-a.jpg", class: "img-responsive splash" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 band">
+
+  </div>
+</div>
+
+  <!-- -->
+  <% if notice %>
+    <p id="notice" class="alert alert-info"><br><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p id="alert" class="alert alert-info"><br><%= alert %></p>
+  <% end %>
+
+  <!-- -->
+   <div class="container-fluid article-container">
+    <div class="row">
+      <% @articles.each do |article| %>
+        <div class="col-md-12">
+        <!-- -->
+        <div class="img-div">
+          <p><% if article.img_url.present? %>
+          <%= link_to image_tag(article.img_url, class: "img-responsive article-img-index"), article_path(article) %>
+          <% end %></p>
+        </div>
+        <!-- -->
+        <div class="article-image-index"></div>
+        <p><span class="article-category-index"><%= article.category %></span> &nbsp · &nbsp <span class="article-author-index"><%= article.author %></span></p>
+        <!-- -->
+        <h3><%= link_to article.title, article_path(article), class: "article-title-index" %></h3>
+        <!-- -->
+        <% if signed_in? && current_user.author? %>
+          <p class="text-center text-command"><%= link_to 'New article', new_article_path %></p>
+        <% end %>
+        <!-- -->
+        <p class="article-brief-index"><%= link_to article.text.truncate_words(40), article_path(article) %></p>
+      <br><hr><br><br>
+      </div>
+    <% end %>
+  </div>
+  </div>

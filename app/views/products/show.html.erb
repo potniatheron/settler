@@ -1,0 +1,41 @@
+<div class="band"></div>
+
+<div class="products-show-div">
+	<div class="row">
+		<div class="col-md-6">
+    <p><% if @product.image_url.present? %>
+      <%= image_tag(@product.image_url, class: "img-responsive") %><% end %></p></div>
+		<div class="col-md-6">
+			<h1 class="product-name"><%= @product.name %> </h1>
+      <p><%= link_to 'Edit', edit_product_path(@product),  class: "command-button" %></p>
+
+      <h2 class="product-price"><%= @product.price %> €</h2>
+
+      <br><br>
+      <p class="product-description"><%= @product.description %></p>
+
+    </div>
+	</div>
+
+<hr>
+
+<br>
+<h5 class="text-center">DISCOVER MORE</h5>
+  <div class="container-fluid">
+    <div class="row">
+      <% @products.each do |product| %>
+      <div class="col-md-3">
+      <p><% if @product.image_url.present? %>
+          <p><%= link_to image_tag(product.image_url, class: "img-responsive img-product-show"), product %>
+          </p>
+      <% end %></p>
+      <p class="text-center name-product-show"><%= product.name %></p>
+      <br><br>
+    </div>
+      <% end %>
+    </div>
+  </div>
+
+	<p class="text-center"><%= link_to 'Back', products_path, class: "command-button" %>
+
+</div>

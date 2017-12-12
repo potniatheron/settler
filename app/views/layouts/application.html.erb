@@ -1,58 +1,76 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Valley</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <title>SETTLER</title>
+  <!-- -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Oswald" rel="stylesheet">
+  <%= csrf_meta_tags %>
+</head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Barlow+Semi+Condensed:100,300,500" rel="stylesheet">
-    <%= csrf_meta_tags %>
-  </head>
-  <body data-spy="scroll" data-target=".navbar">
-
-<nav class="navbar navbar-inverse navbar-fixed-top navbar1">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <%= link_to "VALLEY", root_path, class: "navbar-brand brand-title" %>
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#categories">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
+<body>
+  <!-- -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="icon-container">
+        <%= image_tag "open.png", class: "open-menu" %>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="categories">
-      <ul class="nav navbar-nav navbar-right navbar-categories">
+  </nav>
+  <!-- -->
+  <div class="overlay">
+  <%= link_to image_tag("logo.png", class: "img-responsive logo"), root_path %>
+    <nav class="overlay-menu">
+      <ul>
+        <li><%= link_to "Stories", articles_path %></li>
+        <li><%= link_to "Travels", travels_path %></li>
         <li><%= link_to "About", static_about_path %></li>
-  <li>
-    
-  <% if user_signed_in? %>
-    <%= link_to('', destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out") %>
-  <% else %>
-    <%= link_to('', new_user_session_path, class: "glyphicon glyphicon-user") %>
-  <% end %>
-  </li>
+        <li><%= link_to "Shop", products_path %></li>
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+          <% else %>
+        <li><%= link_to('Login', new_user_session_path) %>
+          <% end %>
+        </li>
       </ul>
+    <!-- -->
+    <p class="text-center title1">Contemporary Geography & Culture</p>
+    <!-- -->
+    <p class="social-icons">
+      <a href="#"><span class="fa fa-vimeo"></span></a> &nbsp 
+      <a href="#"><span class="fa fa-instagram"></span></a> &nbsp 
+      <a href="#"><span class="fa fa-twitter"></span></a> &nbsp 
+      <a href="#"><span class="fa fa-facebook"></span></a>
+    </p>
+  </nav>
+</div>
 
-    </div>
-  </div>
-</nav>
-
-<% if notice %>
-    <p id="notice" class="alert alert-info"><br><%= notice %></p>
-<% end %>
-<% if alert %>
-    <p id="alert" class="alert alert-info"><br><%= alert %></p>
-<% end %>
-
+  <!-- -->
   <div class="page-row page-row-expanded">
     <%= yield %>
   </div>
+
+  <div class="footer">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-center" id="title2-filled"></p>
+        <br><br>
+        <p class="title2-fill">The map, the route, the territory</p>
+        <p class="title2-fill">Die Karte, die Route, das Gebiet</p>
+        <p class="title2-fill">La mappa, l'itinerario, il territorio</p>
+        <h5 class="text-center">&copy 2018 SETTLER</h5>
+      </div>
+  </div>
+</div>
+
   </body>
 
 </html>

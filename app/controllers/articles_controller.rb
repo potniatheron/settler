@@ -1,11 +1,20 @@
-
 class ArticlesController < ApplicationController
-  def index
+
+def index
+  if params[:q]
+    search_term = params[:q]
+    @articles = Article.search(search_term)
+  else
     @articles = Article.all
   end
+end
  
   def show
     @article = Article.find(params[:id])
+    @comments = @article.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
+
+    @articles = Article.last(4)
+
   end
  
   def new
@@ -45,6 +54,6 @@ class ArticlesController < ApplicationController
  
   private
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:article).permit(:title, :text, :img_url, :category, :author)
     end
 end

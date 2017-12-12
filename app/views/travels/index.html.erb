@@ -1,0 +1,40 @@
+<div class="band"> </div>
+<!-- -->
+<div class="travels-div">
+  <h1 class="text-center">SETTLER TRAVELER</h1>
+  <p class="text-center">A catalogue of curated trips for travelers who don't want to be tourists</p>
+  <% if signed_in? && current_user.admin? %>
+    <h4 class="text-center"><%= link_to '  New travel', new_travel_path, class: "glyphicon glyphicon-plus new-button" %> </h4>
+  <% end %>
+  <br>
+<!-- -->
+    <div class="container-fluid">
+      <div class="row">
+        <% @travels.each do |travel| %>
+        <div class="col-md-4">
+<!-- -->
+        <% if travel.image_url.present? %>
+          <p><%= link_to image_tag(travel.image_url, class: "img-responsive img-travel"), travel %>
+          </p>
+        <% end %>
+<!-- -->
+        <p><%= link_to travel.name, travel, class: "travel-name-index" %></p>
+<!-- -->
+        <% if signed_in? && current_user.admin? %>
+          <p class="edit-delete">
+            <%= link_to 'Edit', edit_travel_path(travel), id: "edit-button-index" %>
+            &nbsp · &nbsp 
+            <%= link_to 'Delete', travel, id: "edit-button-index", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </p>     
+        <% end %>
+<!-- -->
+    <div class="travel-description-index">
+      <p><%= travel.description.truncate_words(20) %></p>
+    </div>
+     <br><br><hr><br><br>
+      </div>
+        <% end %>
+      </div>
+    </div> 
+  <br>
+</div>

@@ -1,0 +1,51 @@
+<%= form_with model: @travel, local: true do |form| %>
+ 
+  <% if @travel.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@travel.errors.count, "error") %> prohibited
+        this travel from being saved:
+      </h2>
+      <ul>
+        <% @travel.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="row form-box">
+    <div class="col-md-6">
+
+  <div class="field">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, id: :travel_name, class: "form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :img_url, class: "form-label" %>
+    <%= form.text_field :img_url, id: :travel_image_url , class: "form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :price, class: "form-label" %>
+    <%= form.text_field :price, id: :travel_price , class: "form-control" %>
+  </div>
+</div>
+
+  <div class="col-md-6">
+      <div class="field">
+      <%= form.label :description, class: "form-label" %>
+      <%= form.text_area :description, id: :travel_description, rows: 10, class: "form-control" %>
+      </div>
+  </div>
+</div>
+
+<br>
+
+<div class="actions">
+  <p class="text-center">
+    <%= form.submit "Post", class: "btn btn-default" %>
+  </p>
+ </div>
+<% end %>

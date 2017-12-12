@@ -1,3 +1,241 @@
-// Place all the styles related to the static controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1, h2, h3, h4 {
+  font-family: "Oswald";
+}
+
+h5 {
+  font-family: "Oswald";
+  padding-bottom: 40px;
+  text-transform: uppercase;
+  color: grey; 
+}
+
+a {
+  color: white !important;
+  text-decoration: none !important;
+  font-family: "Oswald" !important;
+}
+
+p {
+  font-family: "EB Garamond";
+}
+
+.title1 {
+  font-size: 0.5em;
+  color: white;
+}
+
+/*** PAGE ORGANIZATION ***/
+body {
+  background-color: black;
+}
+
+.band {
+  background-color: #22272B;
+  color: white;
+  padding: 90px 0px 0px 0px;
+}
+
+/* Footer */
+.footer {
+  padding: 80px 0px 150px 0px;
+  height: 90px;
+  background-color: #DDDDDD;
+  color: white;
+}
+.footer p {
+  font-size: 1.5em;
+}
+.footer h5 {
+  font-family: "EB Garamond";
+}
+.title2-fill { display:none }
+
+/***OVERLAY MENU ***/
+
+/* Icons */
+.open-menu {
+}
+
+.close-menu {
+}
+
+.icon-container {
+  padding-left: 30px;
+}
+
+/*
+---- Navbar
+*/
+.navbar-fixed-top {
+  background-color: transparent;
+  border: 0;
+  padding: 30px 35px 0px 0px;
+}
+
+/*
+---- Overlay
+*/
+.overlay {
+  position: fixed;
+    background: #d8d9db; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#d8d9db, #C9CACC); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#d8d9db, #C9CACC); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#d8d9db, #C9CACC); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#d8d9db, #C9CACC); /* Standard syntax (must be last) */  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s, visibility .35s, height .35s;
+  overflow: hidden;
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+  z-index: 1;
+}
+
+.overlay.open li {
+  animation: fadeInRight .5s ease forwards;
+  animation-delay: .35s;
+}
+.overlay.open li:nth-of-type(2) {
+  animation-delay: .4s;
+}
+.overlay.open li:nth-of-type(3) {
+  animation-delay: .45s;
+}
+.overlay.open li:nth-of-type(4) {
+  animation-delay: .50s;
+}
+.overlay.open li:nth-of-type(5) {
+  animation-delay: .55s;
+}
+
+/* Navigation Title */
+.overlay .logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 12%;
+}
+
+.social-icons {
+  font-size: 20px;
+  color: white !important;
+}
+
+.overlay nav {
+  position: relative;
+  height: 50%;
+  top: 60%;
+  transform: translateY(-50%);
+  font-size: 35px;
+  text-align: center;
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.overlay ul li {
+  display: block;
+  position: relative;
+  opacity: 0;
+}
+.overlay ul li a {
+  display: block;
+  position: relative;
+  color: white !important;
+  font-family: "Oswald";
+  text-decoration: none;
+  overflow: hidden;
+  font-size: 1em;
+  -webkit-transition: font-size 1s;
+}
+.overlay ul li a:hover {
+  font-size: 1.05em;
+  transition: font-size 1s;
+  -webkit-transition: font-size 1s;
+}
+.social-icons a {
+  font-size: 1em;
+  -webkit-transition: font-size 1s;
+}
+.social-icons a:hover {
+  font-size: 1.05em;
+  transition: font-size 1s;
+  -webkit-transition: font-size 1s;
+}
+
+.open-menu,
+.close-menu,
+.button {
+  cursor: pointer;
+  transition: transform 0.30s;
+  width: 30px;
+}
+.open-menu:hover,
+.close-menu:hover,
+.button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+/*** ABOUT ***/
+.about-div {
+  margin: 0px 100px 0px 100px;
+  text-align: center;
+}
+.about-div h1 {
+  padding: 100px 0px 20px 0px;
+  margin: 0px 100px 0px 100px;
+  font-family: "EB Garamond";
+}
+.about-div p {
+  margin: 0px 100px 0px 100px;
+  text-align: center;
+  color: grey;
+}
+.presentation {
+  font-style: italic;
+}
+
+/*** ELEMENTS ***/
+.alert {
+  background-color: black;
+  color: white;
+  text-align: center;
+  
+  outline: none;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.notice {
+  background-color: black;
+  color: white;
+  text-align: center;
+  
+  outline: none;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;  
+}

@@ -1,0 +1,23 @@
+<div class="comment-box">
+
+  <p>
+    <%= pluralize(@comments.count, "Comment") %> &nbsp &nbsp 
+
+    <% if !user_signed_in? %>
+    · &nbsp &nbsp <%= link_to('Login to partecipate', new_user_session_path, class: "command-button", style: "font-family: EB Garamond !important") %>
+    <% end %>
+  </p>
+
+  <hr>
+
+  <% if signed_in? %>
+    <%= form_for([@article, @article.comments.build]) do |f| %>
+      <p>
+        <%= f.text_area :body, class: "form-control", placeholder: "Join the discussion"  %>
+      </p>
+      <p>
+        <%= f.submit "Submit", class: "btn btn-success" %>
+      </p>
+    <% end %>
+  <% end %>
+</div>

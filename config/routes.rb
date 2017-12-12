@@ -1,8 +1,22 @@
 Rails.application.routes.draw do
+
+  resources :travels
+  resources :products
   devise_for :users
   resources :users
+
+  resources :articles do
+      resources :comments do
+        collection do
+          put :approve
+        end
+      end
+    end
+
+  
   get 'static/index'
   get 'static/about'
+  get 'static/shop'
 
   root 'static#index'
 

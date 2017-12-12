@@ -14,18 +14,57 @@
     </div>
   <% end %>
  
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+  <div class="row form-box">
+    <div class="col-md-6">
+
+  <div class="field">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, id: :article_title, class: "form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :img_url, class: "form-label" %>
+    <%= form.text_field :img_url, id: :article_img_url , class: "form-control" %>
+  </div>
+  <br>
+  <table class="table table-condensed">
+    <td>
+    <br>
+    <div class="form-group">
+     <%= form.label :category, class: "form-label" %>
+     <%= form.select :category, options_for_select([
+    ["Select product type", ""], 
+    "Longform", 
+    "Article", 
+    "Interview", 
+    "Map", 
+    "Documentary"]), 
+    {}, { class: "form form-group form-control" } %>
+  </div>
+    </td>
+    <td>
+    <br>
+    <div class="form-group">
+    <%= form.label :author, class: "form-label" %>
+    <%= form.text_field :author, id: :article_author , class: "form-control" %>    </div>
+    </td>
+  </table>
+
+</div>
+
+  <div class="col-md-6">
+      <div class="field">
+      <%= form.label :text, class: "form-label" %>
+      <%= form.text_area :text, id: :article_text, rows: 10, class: "form-control" %>
+      </div>
+  </div>
+</div>
+
+<br>
+
+<div class="actions">
+  <p class="text-center">
+    <%= form.submit "Post", class: "btn btn-default" %>
   </p>
- 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
- 
+ </div>
 <% end %>
