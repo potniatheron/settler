@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   resources :travels
   resources :products
-  devise_for :users
+  
+  devise_for :users, controllers: { registrations: "user_registrations" }
   resources :users
 
   resources :articles do

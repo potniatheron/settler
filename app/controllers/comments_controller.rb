@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(comment_params)
     @comment.status = "draft"
+    
     if @comment.save
       redirect_to article_path(@article), notice: "Thank you. Your comment was created and is awaiting moderation. Once approved it will appear on this page momentarily."
     else
