@@ -7,7 +7,7 @@ class Article < ApplicationRecord
 	after_create :send_email
 
 	def send_email
-	  UserMailer.post_email(self.user).deliver
+	  NewsletterMailer.post_email(self).deliver
 	end
 
 	def self.search(search_term)
