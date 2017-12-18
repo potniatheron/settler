@@ -1,49 +1,34 @@
-<div class="row">
-  <div class="large-8 large-centered columns">
-    <h5><small>Comments for the post titled:</small> <%= @article.title %></h5>
-    <hr>
-    <h5>Moderation table</h5>
-    <%= form_tag approve_article_comments_path, method: :put do %>
-    <table>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Comment</th>
-      <th>Status</th>
+<div class="band">
+</div>
 
-    </tr>
+<div class="text-center">
+  <h3>Moderate comments for <%= @article.title %></h3>
+  <br>
+  <h5>select comments to approve</h5>
+  
+  <%= form_tag approve_article_comments_path, method: :put do %>
+<div class="moderation-container">
+  <div class="row">
+<% @article.comments.draft.each do |comment| %>
+  <div class="col-md-4">
+    <p>Comment:</p>
+  <%= comment.body %>
+  </div>
+  <div class="col-md-4">
+    <p>Comment status:</p>
+  <%= comment.status%>
+  </div>
+  <div class="col-md-4">
+    <p>Check to approve</p>
+    <%= check_box_tag "comment_ids[]", comment.id %>
+  </div>
+<% end %>
+</div>
+</div>
 
-      <% @article.comments.draft.each do |comment| %>
-      <tr>
-        <td><%= check_box_tag "comment_ids[]", comment.id %></td>
-        <td><%= comment.body %></td>
-        <td><%= comment.status%></td>
-      
-      </tr>
-      <% end %>
-    </table>
-      <%= submit_tag "Approve Comments"%> 
-    <% end %>
+<%= submit_tag "Approve Comments", class: "btn btn-submit", style: "font-family: EB Garamond !important; color: white !important" %> 
+<br><br>
+<% end %>
 
-<h5>All Approved Comments</h5>
-<table>
-  <tr>
-    <th>id</th>
-    <th>Name</th>
-    <th>Comment</th>
-    <th>Status</th>
 
-  </tr>
-  <% @article.comments.approved.each do |comment| %>
-  <tr>
-    <td><%= comment.id %></td>
-    <td><%= comment.body %></td>
-    <td><%= comment.status%></td>
-    
-  </tr>
-  <% end %>
-</table>
-
-<hr>
-
-<p>Note: You could of-course add edit and delete links there.</p>
+</div>

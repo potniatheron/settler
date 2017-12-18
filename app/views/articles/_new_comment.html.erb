@@ -1,10 +1,13 @@
-<div class="comment-box">
+<div class="comment-box text-center">
 
   <p>
-    <%= pluralize(@comments.count, "Comment") %> &nbsp &nbsp 
-
+    <%= pluralize(@comments.approved.count, "Comment") %> &nbsp &nbsp 
     <% if !user_signed_in? %>
-    · &nbsp &nbsp <%= link_to('Login to partecipate', new_user_session_path, class: "command-button", style: "font-family: EB Garamond !important") %>
+    · &nbsp &nbsp <%= link_to('Login to partecipate', new_user_session_path, class: "command-button", style: "font-family: EB Garamond !important") %>  &nbsp &nbsp 
+      <% end %>
+    <% if signed_in? && current_user.moderator? %>
+    · &nbsp &nbsp 
+    <%= link_to "Moderate #{pluralize @comments.draft.size, ('comment')}", article_comments_path(@article), class: "command-button", style: "font-family: EB Garamond !important"%>
     <% end %>
   </p>
 

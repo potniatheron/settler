@@ -35,12 +35,53 @@ body {
   padding: 90px 0px 0px 0px;
 }
 
+.newsletter-band {
+  background-color: #22272B;
+  color: white;
+  padding: 50px 0px 50px 0px;
+}
+.newsletter-band p {
+  opacity: 0.9;
+}
+.newsletter-label {
+  font-family: "EB Garamond";
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+.newsletter-form {
+  font-family: "EB Garamond";
+  font-size: 0.8em;
+  border-color: #E5E0E1;
+  width: 300px;
+  margin: 0 auto;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  z-index: 0;
+  opacity: 0.9;
+}
+.newsletter-button {
+  font-family: "EB Garamond";
+  font-size: 0.8em;
+  border-color: #E5E0E1;
+  opacity: 0.9;
+}
+
+.thank-you {
+  padding: 150px 0px 150px 0px;
+}
+
 /* Footer */
 .footer {
-  padding: 80px 0px 150px 0px;
+  padding: 80px 0px 190px 0px;
   height: 90px;
   background-color: #DDDDDD;
   color: white;
+}
+.footer-img {
+  width: 75px;
+  opacity: 0.8;
 }
 .footer p {
   font-size: 1.5em;
@@ -49,6 +90,7 @@ body {
   font-family: "EB Garamond";
 }
 .title2-fill { display:none }
+
 
 /***OVERLAY MENU ***/
 
@@ -63,18 +105,14 @@ body {
   padding-left: 30px;
 }
 
-/*
----- Navbar
-*/
+/* Navbar */
 .navbar-fixed-top {
   background-color: transparent;
   border: 0;
   padding: 30px 35px 0px 0px;
 }
 
-/*
----- Overlay
-*/
+/* Overlay */
 .overlay {
   position: fixed;
     background: #d8d9db; /* For browsers that do not support gradients */
