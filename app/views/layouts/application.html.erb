@@ -24,6 +24,14 @@
       </div>
     </div>
   </nav>
+    <!-- -->
+  <% if notice %>
+    <p id="notice" class="alert alert-info"><br><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p id="alert" class="alert alert-info"><br><%= alert %></p>
+  <% end %>
+  
   <!-- -->
   <div class="overlay">
   <%= link_to image_tag("logo.png", class: "img-responsive logo"), root_path %>
