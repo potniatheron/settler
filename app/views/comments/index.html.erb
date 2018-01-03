@@ -7,6 +7,7 @@
   <h5>select comments to approve</h5>
   
   <%= form_tag approve_article_comments_path, method: :put do %>
+  
 <div class="moderation-container">
   <div class="row">
 <% @article.comments.draft.each do |comment| %>
@@ -20,7 +21,7 @@
   </div>
   <div class="col-md-4">
     <p>Check to approve</p>
-    <%= check_box_tag "comment_ids[]", comment.id %>
+    <%= check_box_tag "comments_ids[]", comment.id %>
   </div>
 <% end %>
 </div>

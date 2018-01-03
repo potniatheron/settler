@@ -4,11 +4,6 @@ class Article < ApplicationRecord
 
     has_many :orders
     has_many :comments, dependent: :destroy
-    after_create :send_email
-
-    def send_email
-      UserMailer.post_email(@user).deliver
-    end
 
     def self.search(search_term)
           Article.where("title LIKE ?", "%#{search_term}%")
