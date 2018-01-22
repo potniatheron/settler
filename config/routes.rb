@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'newsletter/index'
+
+  get 'newsletter/show'
+
+  get 'newsletter/new'
 
   resources :travels
   resources :products
-  
+  resources :subscribers
   devise_for :users, controllers: { registrations: "user_registrations" }
   resources :users
 
@@ -14,11 +19,11 @@ Rails.application.routes.draw do
       end
     end
 
-  
+
   get 'static/index'
   get 'static/about'
   get 'static/shop'
-  post 'static/thank_you'
+  get 'subscribers/index'
 
   root 'static#index'
 

@@ -1,11 +1,9 @@
-class NewsletterMailer < ActionMailer::Base
+class Newsletter < ActionMailer::Base
+  default from: "francescarinaldi09@gmail.com"
 
-	#def post_email(user)
-	#	@latest_post = Article.order(:id).last
-	#	mail(to: newsletter.email,
-	 #       subject: "New Story on Settler")
-	#end
-
-	
-
+  def newsletter_email(subscriber, newsletter)
+    @newsletter = newsletter
+    @subscriber = subscriber
+    mail(to: subscriber.email, subject: newsletter.title)
+  end
 end

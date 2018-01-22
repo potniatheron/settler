@@ -4,26 +4,6 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12 newsletter-band text-center">
-    <br><br>
-    <p>Sign up to be updated with new weekly stories</p>
-    <br>
-    <%= form_with(url:"/static/thank_you", method: "post", local: true) do |form| %>
-    <div class="form-group">
-      <%= form.label :name, class: "newsletter-label" %>
-      <%= form.text_field :name, class: "form-control newsletter-form", placeholder: "Your name" %>
-    </div>
-    <div class="form-group">
-      <%= form.label :email, class: "newsletter-label" %>
-      <%= form.text_field :email, class: "form-control newsletter-form", placeholder: "Your email address" %>
-    </div>
-    <%= form.submit "Subscribe", class: "btn btn-default newsletter-button" %>
-    <% end %>
-
-</div>
-</div>
-
   <!-- -->
    <div class="container-fluid article-container">
     <div class="row">

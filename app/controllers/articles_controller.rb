@@ -14,7 +14,6 @@ end
     @comments = @article.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
 
     @articles = Article.last(4)
-
   end
  
   def new
@@ -33,6 +32,8 @@ end
     else
       render 'new'
     end
+
+    
   end
  
   def update
