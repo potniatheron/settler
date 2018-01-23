@@ -1,5 +1,6 @@
 class NewsletterController < ApplicationController
   def index
+    @newsletter = Newsletter.new
   end
 
   def show
@@ -15,4 +16,5 @@ class NewsletterController < ApplicationController
        Newsletter.newsletter_email(subscriber, @newsletter).deliver_later
      end
   end
+
 end

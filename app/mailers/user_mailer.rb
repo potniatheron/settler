@@ -7,10 +7,4 @@ class UserMailer < ApplicationMailer
 		mail(to: @email, :subject => "Welcome to the #{@appname}!")
 	end
 
-	def weekly_email(user)
-		@appname = "Settler"
-		@user = user
-		mail to: user.email, subject: "Your #{@appname} weekly update"
-	end
-
 end
