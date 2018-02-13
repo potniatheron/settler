@@ -1,7 +1,7 @@
 class Newsletter < ActionMailer::Base
   default from: "francescarinaldi09@gmail.com"
 
-  def newsletter_email(subscriber, newsletter)
+  def send_to_subscriber(subscriber, newsletter)
     @newsletter = newsletter
     @subscriber = subscriber
     mail(to: subscriber.email, subject: newsletter.title)

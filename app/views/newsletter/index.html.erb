@@ -1,3 +1,9 @@
-<div class="button">
-  <%= link_to "Send Weekly Newsletter", :controller => "newsletter", :action => "send" %>
+<div class="band"></div>
+<div class="text-center">
+
+<h1>Newsletters</h1>
+<% Newsletter.all.each do |newsletter| %>
+  <%= button_to 'Send Weekly Newsletter', newsletter_send_to_subscribers_path(newsletter) %>
+  <% end %>
+  
 </div>

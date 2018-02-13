@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'newsletter/index'
 
-  get 'newsletter/show'
-
-  get 'newsletter/new'
+  resources :newsletter, only: [:index, :new, :show] do
+    post :send_to_subscribers
+  end
 
   resources :travels
   resources :products
@@ -18,7 +17,6 @@ Rails.application.routes.draw do
         end
       end
     end
-
 
   get 'static/index'
   get 'static/about'

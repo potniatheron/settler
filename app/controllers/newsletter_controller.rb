@@ -1,6 +1,6 @@
 class NewsletterController < ApplicationController
   def index
-    @newsletter = Newsletter.new
+    @newsletters = Newsletter.all
   end
 
   def show
@@ -9,12 +9,11 @@ class NewsletterController < ApplicationController
   def new
   end
 
-  def send
-    @newsletter = Newsletter.find(params[:id])
+  def send_to_subscribers
+    @newsletter = Newsletter.find(params[:newsletter_id])
 
      Subscriber.all.each do |subscriber|
-       Newsletter.newsletter_email(subscriber, @newsletter).deliver_later
+       NewsletterMailer.send_to_subscriber(subscriber, @newsletter).deliver_later
      end
   end
-
 end

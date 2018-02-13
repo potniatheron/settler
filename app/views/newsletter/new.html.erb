@@ -1,2 +1,24 @@
-<h1>Newsletter#new</h1>
-<p>Find me in app/views/newsletter/new.html.erb</p>
+<%= form_with model: @newsletter, local: true do |form| %>
+
+  <div class="row form-box">
+    <div class="col-md-6">
+      <div class="field">
+        <%= form.label :title, class: "form-label" %>
+        <%= form.text_field :title, id: :newsletter_title, class: "form-control" %>
+      </div>
+      <br>
+      <div class="field">
+        <%= form.label :content, class: "form-label" %>
+        <%= form.text_area :content, id: :newsletter_content , class: "form-control", rows: 20 %>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+<div class="actions">
+  <p class="text-center">
+    <%= form.submit "Create", class: "btn btn-default" %>
+  </p>
+ </div>
+<% end %>
