@@ -1,71 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+
   <title>SETTLER</title>
-  <!-- -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <!-- -->
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <!-- -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Oswald" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ovo|Prata" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <!-- -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="icon-container">
-        <%= image_tag "open.png", class: "open-menu" %>
-      </div>
-    </div>
-  </nav>
-    <!-- -->
+
   <% if notice %>
     <p id="notice" class="alert alert-info"><br><%= notice %></p>
   <% end %>
   <% if alert %>
     <p id="alert" class="alert alert-info"><br><%= alert %></p>
   <% end %>
-  
-  <!-- -->
-  <div class="overlay">
-  <%= link_to image_tag("logo.png", class: "img-responsive logo"), root_path %>
-    <nav class="overlay-menu">
-      <ul>
-        <li><%= link_to "Stories", articles_path %></li>
-        <li><%= link_to "Travels", travels_path %></li>
-        <li><%= link_to "About", static_about_path %></li>
-        <li><%= link_to "Shop", products_path %></li>
-        <li>
-          <% if user_signed_in? %>
-            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-          <% else %>
-        <li><%= link_to('Login', new_user_session_path) %>
-          <% end %>
-        </li>
-      </ul>
-    <!-- -->
-    <p class="text-center title1">Contemporary Geography & Culture</p>
-    <!-- -->
-    <p class="social-icons">
-      <a href="#"><span class="fa fa-vimeo"></span></a> &nbsp 
-      <a href="#"><span class="fa fa-instagram"></span></a> &nbsp 
-      <a href="#"><span class="fa fa-twitter"></span></a> &nbsp 
-      <a href="#"><span class="fa fa-facebook"></span></a>
-    </p>
+
+  <nav class="navbar navbar-fixed-top">
+  <%= image_tag "open.png", class:"toggle-overlay", id: "openMenu" %>
+  <%= image_tag "close1.png", class:"toggle-overlay invisible", id: "closeMenu" %>
   </nav>
-</div>
+
+  <aside>
+    <nav>
+      <ul>
+        <li><%= link_to "Travel Tales", static_laststories_path %></li>
+            <li><%= link_to "Departures", travels_path %></li>
+            <li><%= link_to "Subscribe", subscribers_path %></li>
+            <li><%= link_to "Shop", products_path %></li>
+
+            <p class="title1"><%= link_to "About ", static_about_path %> &nbsp · &nbsp <% if user_signed_in? %><%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <% else %><%= link_to('Login', new_user_session_path) %><% end %></p>
+            <p class="social-icons">
+              <a href="#"><span class="fa fa-vimeo"></span></a> &nbsp
+              <a href="#"><span class="fa fa-instagram"></span></a> &nbsp
+              <a href="#"><span class="fa fa-twitter"></span></a> &nbsp
+              <a href="#"><span class="fa fa-facebook"></span></a>
+            </p>
+        </div>
+
+      </ul>
+    </nav>
+  </aside>
 
   <!-- -->
   <div class="page-row page-row-expanded">
     <%= yield %>
   </div>
 
+<!--
+start
   <div class="footer">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -79,7 +68,8 @@
       </div>
   </div>
 </div>
-
+end
+-->
   </body>
 
 </html>

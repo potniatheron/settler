@@ -9,6 +9,7 @@ class NewsletterController < ApplicationController
   def new
   end
 
+
   def send_to_subscribers
     @newsletter = Newsletter.find(params[:newsletter_id])
 

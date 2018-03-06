@@ -1,4 +1,4 @@
-class Newsletter < ActionMailer::Base
+class NewsletterMailer < ActionMailer::Base
   default from: "francescarinaldi09@gmail.com"
 
   def send_to_subscriber(subscriber, newsletter)

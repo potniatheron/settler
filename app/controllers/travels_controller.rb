@@ -10,7 +10,7 @@ class TravelsController < ApplicationController
   # GET /travels/1
   # GET /travels/1.json
   def show
-    @travels = Travel.all
+    @travels = Travel.last(4)
   end
 
   # GET /travels/new

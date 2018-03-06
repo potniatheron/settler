@@ -1,3 +1,38 @@
+/* MODERATION */
+.moderationTitle {
+	padding: 80px 0px 50px;
+	color: white;
+	text-align: center;
+}
+
+.moderationTable {
+	padding: 50px 0px 50px;
+	background-color: white;
+	text-align: center;
+}
+
+.moderationVoice {
+	font-size: 1.3em;
+	text-decoration: underline;
+}
+
+.mod-column {
+	font-size: 0.9em;
+	padding-top: 15px;
+	background-color: #F9F9F9;
+	text-align: center;
+}
+
+.moderation-container {
+	padding-bottom: 70px;
+}
+
+/* COMMENTS */
+.commentTime {
+		font-size: 0.7em;
+		font-style: italic;
+}
+
 .comment-box {
 	margin: 0px 100px 0px 118px;
 	padding-top: 50px;
@@ -7,41 +42,8 @@
 	font-size: 1.3em;
 }
 
-.mod-column {
-	font-size: 0.9em;
-	padding-top: 15px;
-	font-family: "Oswald";
-	background-color: #F9F9F9;
-	text-align: center;
-}
-
-.btn-mod {
-	width: 70px;
-	height: 30px;
-	font-size: 0.8em;
-	background-color: lightgrey;
-}
-.btn-mod:hover {
-	background-color: #E2E2E2;
-}
-
-.btn-success {
-	background-color: #C4BD67;
-	border-color: #C4BD67;
-}
-.btn-success:hover {
-	background-color: #D8D07B;
-	border-color: #D8D07B;
-}
-
 .timeago {
 	text-transform: uppercase;
 	color: grey;
 	font-size: 0.6em;
-}
-
-.moderation-container {
-	padding-bottom: 70px;
-	font-family: "EB Garamond";
-
 }

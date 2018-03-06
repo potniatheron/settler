@@ -1,6 +1,7 @@
-<div class="band text-center">
+<div class="deviseLogin">
+  <div class="loginPanel">
 
-    <h2>Forgot your password?</h2>
+    <h4>Forgot your password?</h4>
 <br>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -11,10 +12,11 @@
   </div>
 <br>
   <div class="actions">
-    <%= f.submit "Send me instructions", class: "btn btn-success" %>
+    <%= f.submit "Send", class: "button" %>
   </div>
 <% end %>
 <br><br>
 <%= render "devise/shared/links" %>
 <br><br>
+</div>
 </div>

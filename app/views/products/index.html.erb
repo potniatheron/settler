@@ -1,39 +1,22 @@
-<div class="band"> </div>
-<!-- -->
-<div class="products-div">
-  <h1 class="text-center">CATALOGUE</h1>
+<div class="container-fluid index-container">
+  <%= image_tag("logo.png", class: "top-logo") %>
   <% if signed_in? && current_user.admin? %>
-    <h4 class="text-center"><%= link_to '  New product', new_product_path, class: "glyphicon glyphicon-plus new-button" %> </h4>
+  <h5 class="text-center"><%= link_to '+ New Product', new_product_path %></h5>
   <% end %>
   <br>
-<!-- -->
-    <div class="container-fluid">
-      <div class="row">
-        <% @products.each do |product| %>
-        <div class="col-md-6">
-<!-- -->
-        <% if product.image_url.present? %>
-          <p><%= link_to image_tag(product.image_url, class: "img-responsive img-product"), product %>
-          </p>
-        <% end %>
-<!-- -->
-        <p><%= link_to product.name, product, class: "product-name-index" %></p>
-<!-- -->
-        <% if signed_in? && current_user.admin? %>
-          <p class="edit-delete">
-            <%= link_to 'Edit', edit_product_path(product), id: "edit-button-index" %>
-            &nbsp · &nbsp 
-            <%= link_to 'Delete', product, id: "edit-button-index", method: :delete, data: { confirm: 'Are you sure?' } %>
-          </p>     
-        <% end %>
-<!-- -->
-    <div class="product-description-index">
-      <p><%= product.description.truncate_words(15) %></p>
-    </div>
-     <br><br><hr><br><br>
-      </div>
-        <% end %>
-      </div>
-    </div> 
-  <br>
+  <div class="row">
+    <% @products.each do |product| %>
+    <div class="col-md-6">
+      <% if product.image_url.present? %>
+        <%= link_to image_tag(product.image_url, class: "img-responsive"), product_path(product) %>
+      <% end %>
+      <h3><%= link_to product.name, product_path(product) %></h3>
+      <p><%= product.price %></p>
+      <p><%= product.description %></p>
+      <% if signed_in? && current_user.moderator? %>
+      <p><%= link_to 'Edit', edit_product_path(product) %> &nbsp · &nbsp  <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% end %>
+    </div><br>
+    <% end %>
+  </div>
 </div>

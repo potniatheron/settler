@@ -1,52 +1,18 @@
-<div class="band">
-</div>
-<!-- -->
-<% if notice %>
-  <p id="notice" class="alert alert-info"><br><%= notice %></p>
+<div class="index-container">
+  <%= image_tag("logo.png", class: "top-logo") %>
+  <% if signed_in? && current_user.admin? %>
+  <h5 class="text-center"><%= link_to '+ New Article', new_article_path %></h5>
   <% end %>
-<% if alert %>
-  <p id="alert" class="alert alert-info"><br><%= alert %></p>
-  <% end %>
-
-<!-- -->
-<%= form_with(url: articles_path, method: 'get', local: true) do |form| %>
-  <div class="input-group" id="searchform">
-    <%= form.text_field :q, id: 'q', value: params[:q], class: "form-control search-form", placeholder: "Look for a destination, a topic, an itinerary etc " %>
-    <span class="input-group-btn"><%= form.submit 'Go', class: "btn btn-default search-button" %></span>
-  </div>
-<% end %>
-<!-- -->
-<% if signed_in? && current_user.author? %>
-<br><br>
-<p class="text-center"><%= link_to '+  New article', new_article_path, class: "command-button" %></p>
-<% end %>
-
-  <!-- -->
-   <div class="container-fluid article-container">
-    <div class="row">
-      <% @articles.each do |article| %>
-        <div class="col-md-6">
-        <!-- -->
-        <div class="img-div">
-          <p><% if article.img_url.present? %>
-          <%= link_to image_tag(article.img_url, class: "img-responsive article-img-index"), article_path(article) %>
-          <% end %></p>
-       </div>
-        <!-- -->
-        <p><span class="article-category-index"><%= article.category %></span> &nbsp · &nbsp <span class="article-author-index"><%= article.author %></span></p>
-        <!-- -->
-        <h3><%= link_to article.title, article_path(article), class: "article-title-index" %></h3>
-        <!-- -->
-        <% if signed_in? && current_user.moderator? %>
-          <p class="edit-delete">
-          <%= link_to 'Edit', edit_article_path(article), id: "edit-button-index" %> &nbsp · &nbsp
-            <%= link_to 'Delete', article, id: "edit-button-index", method: :delete, data: { confirm: 'Are you sure?' } %>
-          </p>
-        <% end %>
-        <!-- -->
-        <p class="article-brief-index"><%= link_to article.text.truncate_words(40), article_path(article) %></p>
-        <br><hr><br><br>
-      </div>
+  <div class="row">
+    <% @articles.each do |article| %>
+    <div class="col-md-6">
+      <% if article.img_url.present? %>
+        <%= link_to image_tag(article.img_url, class: "img-responsive"), article_path(article) %>
       <% end %>
+      <h3><%= link_to article.title, article_path(article) %></h3>
+      <% if signed_in? && current_user.moderator? %><p><%= link_to 'Edit', edit_article_path(article) %> &nbsp · &nbsp <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' } %></p><% end %>
+      <p><%= article.category %> &nbsp · &nbsp <%= article.author %></p><br>
     </div>
+    <% end %>
   </div>
+</div>

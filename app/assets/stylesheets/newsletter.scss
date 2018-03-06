@@ -1,3 +1,16 @@
-// Place all the styles related to the Newsletter controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.newsletter {
+  background: url('https://images.unsplash.com/photo-1447108477593-21b8c4edc73f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dc4b2ffc4061f34f9a34b44ad456d6c4&auto=format&fit=crop&w=1950&q=80') no-repeat left center / cover;
+  height: 1024px;
+  color: white;
+}
+
+.newsletterPanel {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 80px 50px 80px 50px;
+  font-family: "Ovo";
+  font-size: 1.2em;
+}

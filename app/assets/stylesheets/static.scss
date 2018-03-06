@@ -1,22 +1,226 @@
-h1, h2, h3, h4 {
-  font-family: "Oswald";
+body {
+  background-color: black;
 }
 
-h5 {
-  font-family: "Oswald";
-  padding-bottom: 40px;
-  text-transform: uppercase;
-  color: grey; 
+.invisible {
+  visibility: hidden;
+}
+
+.top-logo {
+  width: 30%;
+  margin: 0 auto !important;
+  padding-bottom: 50px;
+}
+
+.pages-logo {
+  width: 65%;
+  margin: 0 auto !important;
+  padding-bottom: 50px;
+}
+
+/****************/
+/* OVERLAY MENU */
+
+aside {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+  background-color: black;
+	visibility: hidden;
+
+	z-index: 2;
+}
+.open {
+	opacity: 1;
+	visibility: visible;
+}
+
+nav {
+  position: relative;
+  left: -17px;
+  font-size: 35px;
+  text-align: center;
+  top: 30%;
+	ul {
+		list-style: none;
+	}
+}
+
+.title1 {
+padding: 60px 0px 0px;
+}
+.social-icons {
+  font-size: 0.5em;
+}
+
+
+/***************************/
+/*** *** INDEX PAGE *** ***/
+
+.background-image {
+  width: 110%;
+  height: 110%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  background: url('https://images.unsplash.com/photo-1484160948294-3e263f9af748?ixlib=rb-0.3.5&s=46a24abd951e10a92ef770a17537e7c6&auto=format&fit=crop&w=2850&q=80') no-repeat left center / cover;
+}
+
+.title2-fill { display:none }
+
+#home-logo {
+  width: 20%;
+  position: absolute;
+  left: 40%;
+  top: 15%;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 9;
+}
+
+#home-slogan {
+  width: 20%;
+  position: absolute;
+  left: 37.5%;
+  top: 22%;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 9;
+  color: white;
+  font-size: 1.8em;
+}
+
+#blog-link {
+  font-size: 1.2em;
+  white-space: nowrap;
+  z-index: 9;
+  color: white;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+
+  display: block;
+  width: 130px;
+  border: 1px solid white;
+  padding-top: 8px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  -webkit-transition: all 1s linear;
+  -moz-transition:    all 1s linear;
+  -o-transition:      all 1s linear;
+  -ms-transition:     all 1s linear;
+  transition:         all 1s linear;
+
+  cursor: pointer;
+}
+  #blog-link:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+
+    -webkit-transition: all 1s linear;
+    -moz-transition:    all 1s linear;
+    -o-transition:      all 1s linear;
+    -ms-transition:     all 1s linear;
+    transition:         all 1s linear;
+  }
+
+
+/**************************/
+/*** *** ABOUT PAGE *** ***/
+
+.about-container {
+  margin: 0px 100px 0px 100px;
+  padding: 150px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.about-logo {
+    width: 300px;
+    padding-bottom: 30px;
+}
+
+.about-images > img {
+  width: 200px;
+  padding: 10px 15px 10px 15px;
+}
+
+
+/****************************/
+/*** *** DEVISE PAGES *** ***/
+
+.deviseLogin {
+  background: url('https://images.unsplash.com/photo-1473773508845-188df298d2d1?ixlib=rb-0.3.5&s=2547cb23454e115fa0881b9b43e2359f&auto=format&fit=crop&w=2534&q=80') no-repeat left center / cover;
+  height: 1024px;
+  color: white;
+}
+
+.loginPanel {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 80px 50px 80px 50px;
+  font-family: "Ovo";
+  font-size: 1.2em;
+}
+
+.button {
+	display: inline-block;
+  width: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.2);;
+  padding: 8px 0px 8px;
+  text-align: center;
+	background-color: rgba(255, 255, 255, 0.3);
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition:    all 0.3s linear;
+  -o-transition:      all 0.3s linear;
+  -ms-transition:     all 0.3s linear;
+  transition:         all 0.3s linear;
+	}
+
+	.button:hover {
+	  background-color: rgba(255, 255, 255, 0.5);
+
+	  -webkit-transition: all 0.3s linear;
+	  -moz-transition:    all 0.3s linear;
+	  -o-transition:      all 0.3s linear;
+	  -ms-transition:     all 0.3s linear;
+	  transition:         all 0.3s linear;
+	}
+
+  .button2 {
+  	display: inline-block;
+    width: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.2);;
+    padding: 8px 0px 8px;
+    font-size: 0.8em;
+  }
+
+
+/**************************/
+/*** *** TYPOGRAPHY *** ***/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Prata";
 }
 
 a {
   color: white !important;
   text-decoration: none !important;
-  font-family: "Oswald" !important;
+}
+
+nav li {
+  font-family: "Prata" !important;
 }
 
 p {
-  font-family: "EB Garamond";
+  font-family: "Ovo";
 }
 
 .title1 {
@@ -24,261 +228,227 @@ p {
   color: white;
 }
 
-/*** PAGE ORGANIZATION ***/
-body {
-  background-color: black;
+/*************/
+/*** ICONS ***/
+
+#closeMenu {
+  width: 80px;
+  top: 20%;
+  left: 5%;
+  position: absolute;
 }
 
-.form-control {
-  max-width: 400px;
-  margin: 0 auto;
+#openMenu {
+  width: 80px;
+  position: absolute;
+  top: 20%;
+  left: 5%;
 }
 
-.band {
-  background-color: #22272B;
-  color: white;
-  padding: 90px 0px 0px 0px;
-}
 
-.newsletter-band {
-  background-color: #22272B;
-  color: white;
-  padding: 50px 0px 50px 0px;
-}
-.newsletter-band p {
-  opacity: 0.9;
-}
-.newsletter-label {
-  font-family: "EB Garamond";
-  font-size: 1.2em;
-  opacity: 0.9;
-}
-.newsletter-form {
-  font-family: "EB Garamond";
-  font-size: 0.8em;
-  border-color: #E5E0E1;
-  width: 300px;
-  margin: 0 auto;
-  outline: none;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-  z-index: 0;
-  opacity: 0.9;
-}
-.newsletter-button {
-  font-family: "EB Garamond";
-  font-size: 0.8em;
-  border-color: #E5E0E1;
-  opacity: 0.9;
+/*****************/
+/*** ELEMENTS ***/
+
+.alert
+{
+    border: solid 1px black;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    z-index: 100;
+    text-align: center;
+    width: 200px;
+    height: 80px;
+
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 .thank-you {
   padding: 150px 0px 150px 0px;
+  text-align: center;
 }
 
-/* Footer */
-.footer {
-  padding: 80px 0px 190px 0px;
-  height: 90px;
-  background-color: #DDDDDD;
-  color: white;
+.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline:none;
+  box-shadow:none;
+  color: white !important;
 }
-.footer-img {
-  width: 75px;
-  opacity: 0.8;
-}
-.footer p {
-  font-size: 1.5em;
-}
-.footer h5 {
-  font-family: "EB Garamond";
-}
-.title2-fill { display:none }
-
-
-/***OVERLAY MENU ***/
-
-/* Icons */
-.open-menu {
-}
-
-.close-menu {
-}
-
-.icon-container {
-  padding-left: 30px;
-}
-
-/* Navbar */
-.navbar-fixed-top {
-  background-color: transparent;
-  border: 0;
-  padding: 30px 35px 0px 0px;
-}
-
-/* Overlay */
-.overlay {
-  position: fixed;
-    background: #d8d9db; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#d8d9db, #C9CACC); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#d8d9db, #C9CACC); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#d8d9db, #C9CACC); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#d8d9db, #C9CACC); /* Standard syntax (must be last) */  width: 100%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .35s, visibility .35s, height .35s;
-  overflow: hidden;
-}
-
-.overlay.open {
-  opacity: 1;
-  visibility: visible;
-  height: 100%;
-  z-index: 1;
-}
-
-.overlay.open li {
-  animation: fadeInRight .5s ease forwards;
-  animation-delay: .35s;
-}
-.overlay.open li:nth-of-type(2) {
-  animation-delay: .4s;
-}
-.overlay.open li:nth-of-type(3) {
-  animation-delay: .45s;
-}
-.overlay.open li:nth-of-type(4) {
-  animation-delay: .50s;
-}
-.overlay.open li:nth-of-type(5) {
-  animation-delay: .55s;
-}
-
-/* Navigation Title */
-.overlay .logo {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  top: 12%;
-}
-
-.social-icons {
-  font-size: 20px;
+.form-control:focus {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline:none;
+  box-shadow:none;
   color: white !important;
 }
 
-.overlay nav {
-  position: relative;
-  height: 50%;
-  top: 60%;
-  transform: translateY(-50%);
-  font-size: 35px;
-  text-align: center;
-}
-.overlay ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: inline-block;
-  position: relative;
-  height: 100%;
-}
-.overlay ul li {
-  display: block;
-  position: relative;
-  opacity: 0;
-}
-.overlay ul li a {
-  display: block;
-  position: relative;
-  color: white !important;
-  font-family: "Oswald";
-  text-decoration: none;
-  overflow: hidden;
-  font-size: 1em;
-  -webkit-transition: font-size 1s;
-}
-.overlay ul li a:hover {
-  font-size: 1.05em;
-  transition: font-size 1s;
-  -webkit-transition: font-size 1s;
-}
-.social-icons a {
-  font-size: 1em;
-  -webkit-transition: font-size 1s;
-}
-.social-icons a:hover {
-  font-size: 1.05em;
-  transition: font-size 1s;
-  -webkit-transition: font-size 1s;
-}
 
-.open-menu,
-.close-menu,
-.button {
-  cursor: pointer;
-  transition: transform 0.30s;
-  width: 30px;
-}
-.open-menu:hover,
-.close-menu:hover,
-.button:hover {
-  transform: scale(1.1);
-}
+/*****************************/
+/*** *** MEDIA QUERIES *** ***/
 
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    left: 20%;
+@media screen and (max-width: 1080px) {
+  /* INDEX */
+  #home-logo {
+    left: 38%;
+    width: 30%;
   }
-  100% {
-    opacity: 1;
-    left: 0;
+  #home-slogan {
+    left: 38%;
+    font-size: 1.4em;
+  }
+
+  /* LAST STORIES */
+  .tag {
+    width: 320px;
+    left: 35%;
+    margin-bottom: -20px;
   }
 }
 
-/*** ABOUT ***/
-.about-div {
-  margin: 0px 100px 0px 100px;
-  text-align: center;
-}
-.about-div h1 {
-  padding: 100px 0px 20px 0px;
-  margin: 0px 100px 0px 100px;
-  font-family: "EB Garamond";
-}
-.about-div p {
-  margin: 0px 100px 0px 100px;
-  text-align: center;
-  color: grey;
-}
-.presentation {
-  font-style: italic;
+@media screen and (max-width: 880px) {
+  #home-logo {
+    left: 38%;
+    width: 30%;
+  }
+  #home-slogan {
+    left: 34%;
+    font-size: 1.4em;
+  }
 }
 
-/*** ELEMENTS ***/
-.alert {
-  background-color: black;
-  color: white;
-  text-align: center;
-  
-  outline: none;
-  border: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
+@media screen and (max-width: 780px) {
+  #home-logo {
+    left: 38%;
+    width: 30%;
+  }
+  #home-slogan {
+    left: 34%;
+    font-size: 1.4em;
+  }
+}
+@media screen and (max-width: 680px) {
+  #home-logo {
+    left: 38%;
+    width: 30%;
+  }
+  #home-slogan {
+    left: 32%;
+    font-size: 1.2em;
+  }
+
+  /* LAST STORIES PAGE */
+  .tag {
+    width: 300px;
+    left: 25%;
+    margin-bottom: -20px;
+  }
+
+  /* ABOUT PAGE */
+  .about-logo {
+      width: 200px;
+      padding-bottom: 30px;
+  }
+  .about-container {
+    padding: 50px;
+    margin: 0px 50px 0px 50px;
+  }
+
+  .alert {
+    left: 28%;
+  }
+}
+@media screen and (max-width: 580px) {
+  #home-logo {
+    left: 30%;
+    width: 40%;
+  }
+  #home-slogan {
+    top: 22%;
+    left: 29%;
+    font-size: 1.1em;
+  }
+  nav {
+    left: -5%;
+  }
+
+  .container-info {
+    margin: 0px 20px 0px 20px;
+    padding: 32px 50px 50px;
+    font-size: 0.85em;
+  }
+
+  .about-container {
+    padding: 50px;
+    margin: 0px 20px 0px 20px;
+  }
 }
 
-.notice {
-  background-color: black;
-  color: white;
-  text-align: center;
-  
-  outline: none;
-  border: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;  
+@media screen and (max-width: 480px) {
+  /* INDEX PAGE*/
+  #home-logo {
+    left: 30%;
+    width: 40%;
+  }
+  #home-slogan {
+    top: 20%;
+    left: 22%;
+    font-size: 1.1em;
+  }
+  #blog-link {
+    left: 50%;
+  }
+  nav {
+    left: -5%;
+  }
+
+  /* LAST STORIES PAGE */
+  .container-info {
+    margin: 0px 20px 0px 20px;
+  	padding: 32px 50px 50px;
+    font-size: 0.85em;
+  }
+  .tag {
+    width: 300px;
+    left: 15%;
+    margin-bottom: -20px;
+  }
+  .tag a {
+    font-size: 0.9em;
+  }
+  #all-stories {
+    height: 100vh;
+    position: absolute;
+    left: 32%;
+  }
+
+
+  /* ABOUT */
+  .about-logo {
+      width: 120px;
+      padding: 70px 0px 30px;
+  }
+  .about-images > img {
+      width: 120px;
+      padding: 0px 0px 10px;
+  }
+  .about-container {
+    padding: 50px;
+    margin: 0px 0px 0px 0px;
+  }
+  .about-slogan {
+    font-size: 1.5em;
+  }
+
+  /* TYPOGRAPHY */
+  h1, h2, h3, h4, h5, h6 {
+  }
 }

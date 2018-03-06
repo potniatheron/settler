@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-      @products = Product.all
+      @products = Product.last(4)
   end
 
   # GET /products/new

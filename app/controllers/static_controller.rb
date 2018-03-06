@@ -1,8 +1,5 @@
 class StaticController < ApplicationController
-  def index
-    @articles = Article.all
-  end
-
-  def about
+  def laststories
+    @articles = Article.limit(6)
   end
 end

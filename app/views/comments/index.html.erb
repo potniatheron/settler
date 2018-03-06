@@ -1,35 +1,27 @@
-<div class="band">
-</div>
+<h3 class="moderationTitle">Moderating comments to <u><%= @article.title %></u></h3>
+<div class="moderationTable">
+  <h4>Select comments to approve:</h4><br>
 
-<div class="text-center">
-  <h3>Moderate comments for <%= @article.title %></h3>
-  <br>
-  <h5>select comments to approve</h5>
-  
   <%= form_tag approve_article_comments_path, method: :put do %>
-  
-<div class="moderation-container">
-  <div class="row">
-<% @article.comments.draft.each do |comment| %>
-  <div class="col-md-4">
-    <p>Comment:</p>
-  <%= comment.body %>
-  </div>
-  <div class="col-md-4">
-    <p>Comment status:</p>
-  <%= comment.status%>
-  </div>
-  <div class="col-md-4">
-    <p>Check to approve</p>
-    <%= check_box_tag "comments_ids[]", comment.id %>
+    <div class="row">
+      <% @article.comments.draft.each do |comment| %>
+        <div class="col-md-4">
+          <p class="moderationVoice">Comment</p>
+          <p>"<%= comment.body %>"</p>
+        </div>
+        <div class="col-md-4">
+          <p class="moderationVoice">Status</p>
+          <p><%= comment.status%></p>
+        </div>
+        <div class="col-md-4">
+          <p class="moderationVoice">Approved</p>
+          <p><%= check_box_tag "comments_ids[]", comment.id %></p>
+        </div>
+        <br><hr><br>
+
+      <% end %>
+    </div>
+    <br><br>
+    <p><%= submit_tag "Approve", class: "button2" %></p>
   </div>
 <% end %>
-</div>
-</div>
-
-<%= submit_tag "Approve Comments", class: "btn btn-submit", style: "font-family: EB Garamond !important; color: white !important" %> 
-<br><br>
-<% end %>
-
-
-</div>

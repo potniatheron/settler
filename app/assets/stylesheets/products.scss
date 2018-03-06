@@ -1,43 +1,41 @@
-.products-div {
-	padding: 30px 40px 0px 40px;
-	background-color: #F9F9F9;
-	text-align: center;
-}
-	.products-div a {
-		color: black !important;
-	}
-
-.img-product {
-	margin: 0 auto;
-	max-height: 220px;
-	max-width: 220px;
-	padding-bottom: 50px;
+.command-button {
+  color: #02111B !important; /*RICH BLACK*/
 }
 
-.product-name-index {
-	font-size: 2em;
-}
-.product-description-index {
-  font-size: 1.3em;
-  padding: 0px 100px 0px 100px;
-}
-
-.products-show-div {
-	padding: 30px 100px 30px 100px;
-	background-color: #F9F9F9;
-	font-size: 1.3em;
-	text-align: justify;
+/**************************/
+/*** *** FORM PAGE *** ***/
+.form-container {
+  padding: 50px 150px 50px 150px;
+  background-color: white;
 }
 
-.product-name {
-	font-size: 2.5em;
+.form-container .form-control {
+  background-color: whitesmoke;
+  color: black !important;
 }
 
-.img-product-show {
-	max-height: 100px;
-	margin: 0 auto;
+.form-container .form-control:focus {
+  background-color: whitesmoke;
+  color: black !important;
 }
-.name-product-show {
-	font-size: 0.8em;
-	font-family: Oswald;
+
+.form-container .button2 {
+  font-size: 1.2em;
 }
+
+.new-container, .edit-container {
+  text-align: center;
+  color: white;
+  padding: 50px 0px 0px;
+}
+
+/********************/
+/** MEDIA QUERIES **/
+@media screen and (max-width: 480px) {
+  .show-container {
+  	padding: 30px 20px 30px 20px;
+  	background-color: #F9F9F9;
+  	font-size: 1.3em;
+  	text-align: center;
+    }
+  }

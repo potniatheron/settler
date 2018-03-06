@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'static/index'
   get 'static/about'
   get 'static/shop'
+  get 'static/laststories'
   get 'subscribers/index'
 
   root 'static#index'

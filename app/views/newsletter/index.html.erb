@@ -1,9 +1,10 @@
-<div class="band"></div>
-<div class="text-center">
+<div class="newsletter">
+  <div class="newsletterPanel">
+    <%= image_tag("logo.png", class: "pages-logo") %>
 
-<h1>Newsletters</h1>
-<% Newsletter.all.each do |newsletter| %>
-  <%= button_to 'Send Weekly Newsletter', newsletter_send_to_subscribers_path(newsletter) %>
-  <% end %>
-  
+    <p>Send weekly newsletter to all subscribers</p><br>
+    <% Newsletter.all.each do |newsletter| %>
+      <%= button_to 'Deliver', newsletter_send_to_subscribers_path(newsletter), class: "button" %>
+      <% end %>
+  </div>
 </div>

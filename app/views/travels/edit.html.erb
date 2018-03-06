@@ -1,8 +1,5 @@
-<div class="band"></div>
-
-<h1 class="text-center">Edit Travel</h1>
-<p class="text-center"><%= link_to 'Back', travels_path, class: "command-button" %></p>
-
+<div class="new-container">
+  <h1>Edit Travel</h1>
+  <p><%= link_to 'Back', travels_path %></p>
+</div>
 <%= render 'form', travel: @travel %>
-
-<br><br><br>

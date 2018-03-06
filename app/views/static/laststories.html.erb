@@ -1,0 +1,24 @@
+<div id="articles-header">
+  <div class="container-info">
+    <h4>Last month in short</h4><br>
+    <p>We settled in <i>Iceland, Bali, Italian Switzerland, Valencia</i> and <i>Asmara</i>.</p>
+    <p class="lozenge">&#8977;</p>
+    <p>Video traces of our presence can be found in our last vlog.</p>
+    <p class="lozenge">&#8977;</p>
+    <p>Follow us @settler and see the world through our smartphone's reer cameras.</p>
+    <p class="lozenge">&#8977;</p>
+    <p>Our newsletter is delivered on Saturdays and includes our latest stories as well as a curated selection of geographic tales from other explorers worldwide. <br> <%= link_to "Be sure to subscribe", subscribers_path %>.</p>
+  </div>
+</div>
+
+<% @articles.each do |article| %>
+  <% if article.img_url.present? %>
+  <%= link_to image_tag(article.img_url, class: "lastories-image"), article_path(article) %>
+  <% end %>
+  <div class="tag">
+    <h3><%= link_to article.title, article_path(article) %></h3>
+    <p><%= article.category %> &nbsp · &nbsp <%= article.author %></p>
+  </div>
+<% end %>
+
+<h4 id="all-stories"><%= link_to "All tales", articles_path %></h4>
