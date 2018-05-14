@@ -1,24 +1,15 @@
-# README
+# SETTLER MAG
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Settler is an online magazine based on a Ruby on Rails Architecture. 
 
-Things you may want to cover:
+Key features include: 
 
-* Ruby version
+*
+*
+*
+*
+*
 
-* System dependencies
+### Links
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Settler on Heroku](https://valleybikes.herokuapp.com/)
