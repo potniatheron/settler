@@ -9,7 +9,3 @@ Key features include:
 * Animated overlay menu 
 * Comment section with moderation
 * Own newsletter
-
-### Links
-
-[Settler on Heroku](https://valleybikes.herokuapp.com/)
